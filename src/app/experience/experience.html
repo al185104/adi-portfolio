@@ -1,0 +1,43 @@
+<div class="experience">
+  <div class="experience-container">
+    <h2>
+      <span class="experience-title">Experience<span class="highlight-dot">.</span></span>
+    </h2>
+    <div class="experience-content">
+      <div class="experience-tabs">
+          <ul>
+              <li *ngFor="let exp of experiences; let i = index"
+                  [class.active]="selected === i"
+                  (click)="onExperienceChange(i)">
+              {{ exp.company }}
+              </li>
+          </ul>
+      </div>
+      <div class="experience-details">
+        <div>
+          <span class="role">{{ experiences[selected].role }}</span>
+          <span class="at-company">
+            <a [href]="experiences[selected].link" target="_blank" rel="noopener">
+              {{ experiences[selected].company }}
+            </a>
+          </span>
+        </div>
+        <div class="duration">
+          {{ experiences[selected].duration }} – <span>{{ experiences[selected].location }}</span>
+        </div>
+          <div class="tech-logos">
+              <img *ngFor="let tech of experiences[selected].techLogos; let i = index"
+                  [src]="tech.src"
+                  [alt]="tech.alt"
+                  [title]="tech.alt"
+                  [class.shake]="i === shakingLogoIndex" />
+          </div>
+        <ul class="highlights">
+          <li *ngFor="let highlight of experiences[selected].highlights">
+            <span class="check">&#10003;</span> {{ highlight }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

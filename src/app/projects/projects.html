@@ -1,0 +1,25 @@
+<div class="projects-container">
+  <h2 class="projects-title">Personal Projects<span class="highlight-dot">.</span></h2>
+  <div class="projects-grid">
+    <div
+      class="project-tile"
+      *ngFor="let project of projects"
+      [ngClass]="project.size"
+    >
+      <div class="project-image-wrapper">
+        <img [src]="project.icon" [alt]="project.title" class="project-image" />
+      </div>
+      <div class="project-body">
+        <div class="project-title">{{ project.title }}</div>
+        <div class="project-description">{{ project.description }}</div>
+        <div class="project-tech">
+          <span *ngFor="let tech of project.highlights">{{ tech }}</span>
+        </div>
+        <a *ngIf="project.link" class="project-link" [href]="project.link" target="_blank">
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.648.5.104 6.044.104 12.396c0 5.241 3.4 9.665 8.12 11.251.594.112.81-.256.81-.573 0-.285-.011-1.04-.017-2.041-3.302.718-3.998-1.592-3.998-1.592-.541-1.373-1.322-1.74-1.322-1.74-1.081-.74.082-.725.082-.725 1.196.084 1.827 1.229 1.827 1.229 1.063 1.822 2.789 1.296 3.467.992.108-.77.416-1.296.756-1.596-2.636-.3-5.407-1.318-5.407-5.872 0-1.297.462-2.358 1.223-3.189-.123-.301-.53-1.507.117-3.142 0 0 .994-.318 3.258 1.219.944-.262 1.957-.393 2.965-.398 1.007.005 2.02.136 2.965.398 2.263-1.537 3.256-1.219 3.256-1.219.649 1.635.241 2.841.118 3.142.761.831 1.221 1.892 1.221 3.189 0 4.564-2.774 5.568-5.418 5.864.429.372.813 1.103.813 2.224 0 1.606-.014 2.902-.014 3.295 0 .32.213.689.818.572C20.506 22.058 23.9 17.638 23.9 12.396 23.9 6.044 18.352.5 12 .5z"/></svg>
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

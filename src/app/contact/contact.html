@@ -1,0 +1,71 @@
+<div class="contact">
+  <div class="contact-container">
+    <h2 class="contact-title">Get in Touch<span class="highlight-dot">.</span></h2>
+    <p class="contact-subtitle">
+      Have a project idea, want to collaborate, or just say hi? Fill out the form below or email me directly.
+    </p>
+  <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="form-group">
+      <label for="title">Subject</label>
+      <input
+        id="title"
+        name="title"
+        type="text"
+        required
+        [(ngModel)]="form.title"
+        #title="ngModel"
+        [class.invalid]="title.invalid && title.touched"
+        autocomplete="off"
+        placeholder="e.g., Collaboration Inquiry"
+      />
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        required
+        [(ngModel)]="form.name"
+        #name="ngModel"
+        [class.invalid]="name.invalid && name.touched"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        [(ngModel)]="form.email"
+        #email="ngModel"
+        [class.invalid]="email.invalid && email.touched"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        required
+        [(ngModel)]="form.message"
+        #message="ngModel"
+        [class.invalid]="message.invalid && message.touched"
+      ></textarea>
+    </div>
+    <button type="submit" [disabled]="contactForm.invalid || isSending" class="contact-btn">
+      {{ isSending ? 'Sending...' : 'Send Message' }}
+    </button>
+    <div class="success-msg" *ngIf="successMsg">{{ successMsg }}</div>
+    <div class="error-msg" *ngIf="errorMsg">{{ errorMsg }}</div>
+  </form>
+    <div class="contact-footer">
+      Or email me at
+      <a href="mailto:adrian.llamido@gmail.com">adrian.llamido&#64;gmail.com</a>
+    </div>
+  </div>
+</div>

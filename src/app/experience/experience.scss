@@ -1,0 +1,251 @@
+:host {
+  position: fixed;                // This keeps the content in the viewport
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif !important;
+  background: linear-gradient(120deg, #a259ff 0%, #e0c3fc 100%) !important;  
+}
+
+.experience {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(120deg, #f8f7ff 60%, #a259ff22 100%);
+}
+
+.experience-container {
+  max-width: 70vw;
+  max-height: 90vh;
+  width: 100%;
+  background: transparent;
+  border-radius: 2.5rem;
+  box-shadow: 0 8px 36px 0 rgba(196, 172, 227, 0.8);
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -10rem;
+}
+
+.experience-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #222;
+  letter-spacing: -2px;
+  margin-bottom: 2rem;
+  .highlight-dot {
+    color: #a259ff;
+  }
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.experience-tabs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid #eee;
+}
+
+.experience-tabs li {
+  position: relative;
+  cursor: pointer;
+  padding: 1.1rem 2.2rem 1.1rem 1.7rem;
+  color: #7a7a7a;
+  font-size: 1.33rem;
+  font-weight: 700;
+  border-left: 3px solid transparent;
+  background: none;
+  border-radius: 0 1.2rem 1.2rem 0;
+  margin-bottom: 0.4rem;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.2s, border 0.2s, background 0.2s;
+}
+
+.experience-tabs li.active {
+  color: #a259ff;
+  border-left: 8px solid #a259ff;
+  background: #faf6ff;
+  font-weight: 700;
+}
+
+.experience-tabs li:hover {
+  background: #f0eaff;
+  color: #a259ff;
+}
+
+.experience-details {
+  flex: 1;
+  padding-left: 2.4rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.role {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #222;
+  line-height: 1.1;
+}
+.at-company {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #a259ff;
+  margin-left: 0.7rem;
+}
+.at-company a {
+  color: #a259ff;
+  text-decoration: underline;
+  font-weight: 900;
+}
+.duration {
+  color: #888;
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+  margin-top: 0.2rem;
+}
+
+.highlights {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: none;
+}
+.highlights li {
+  margin-bottom: 1.1rem;
+  color: #565656;
+  font-size: 1.18rem;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+.check {
+  color: #a259ff;
+  margin-right: 0.75rem;
+  font-size: 1.5em;
+  line-height: 1.1;
+}
+
+.tech-logos {
+  margin: 1.5rem 0 1.2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.tech-logos img {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 8px 0 rgba(162, 89, 255, 0.07);
+  object-fit: contain;
+  padding: 0.3rem;
+  transition: transform 0.16s;
+}
+.tech-logos img:hover {
+  transform: scale(1.12) rotate(-7deg);
+  box-shadow: 0 2px 16px 0 rgba(162, 89, 255, 0.16);
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .experience-container {
+    border-radius: 1.3rem;
+    padding: 2.1rem 0.8rem;
+    margin: 1rem 0;
+  }
+  .experience-content {
+    flex-direction: column;
+    gap: 2.3rem;
+  }
+  .experience-tabs ul {
+    display: flex;
+    flex-direction: row;
+    border-left: none;
+    border-bottom: 2px solid #eee;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  .experience-tabs li {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    margin-right: 1.4rem;
+    padding: 0.8rem 0.4rem;
+    font-size: 1.1rem;
+    border-radius: 0.8rem 0.8rem 0 0;
+  }
+  .experience-tabs li.active {
+    border-bottom: 8px solid #a259ff;
+    border-left: none;
+    background: #faf6ff;
+  }
+  .experience-details {
+    padding-left: 0;
+  }
+  .experience-title {
+    font-size: 2.3rem;
+    margin-bottom: 1.3rem;
+  }
+  .role {
+    font-size: 1.5rem;
+  }
+  .at-company {
+    font-size: 1.1rem;
+  }
+  .duration {
+    font-size: 1rem;
+  }
+  .highlights li {
+    font-size: 1rem;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  10%, 30%, 50%, 70%, 90% { transform: translate(-2px, 2px) rotate(-6deg); }
+  20%, 40%, 60%, 80% { transform: translate(2px, -2px) rotate(6deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.tech-logos img.shake {
+  animation: shake 0.6s;
+}
+
+@media (max-width: 600px) {
+  .experience-container {
+    padding: 0.7rem 0.2rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+  }
+  .experience-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  .role {
+    font-size: 1.1rem;
+  }
+  .at-company {
+    font-size: 0.95rem;
+  }
+  .duration {
+    font-size: 0.95rem;
+  }
+  .highlights li {
+    font-size: 0.92rem;
+  }
+}
