@@ -34,9 +34,8 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_POLITE_DUNE_0CC8F7703 }}
           action: upload
-          app_location: "/"
+          app_location: dist/adi-portfolio
           api_location: ""
-          output_location: "dist/adi-portfolio/browser"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
