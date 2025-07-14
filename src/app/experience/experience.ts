@@ -67,7 +67,7 @@ experiences: Experience[] = [
       { src: 'assets/logos/csharp.png', alt: 'C#' },
       { src: 'assets/logos/docker.png', alt: 'Docker' },
       { src: 'assets/logos/azure.png', alt: 'Azure' },
-      { src: 'assets/logos/sql.png', alt: 'SQL Server' }
+      { src: 'assets/logos/mssql.png', alt: 'SQL Server' }
     ]
   },
   // ... add techLogos array for each experience
@@ -85,8 +85,7 @@ experiences: Experience[] = [
     techLogos: [
       { src: 'assets/logos/dotnet.png', alt: '.NET' },
       { src: 'assets/logos/csharp.png', alt: 'C#' },
-      { src: 'assets/logos/wpf.png', alt: 'WPF' },
-      { src: 'assets/logos/sql.png', alt: 'SQL Server' }
+      { src: 'assets/logos/mssql.png', alt: 'SQL Server' }
     ]
   },
   {
@@ -102,7 +101,7 @@ experiences: Experience[] = [
     link: 'https://www.yokogawa.com/sg/',
     techLogos: [
       { src: 'assets/logos/cplusplus.png', alt: 'C++' },
-      { src: 'assets/logos/dotnet.png', alt: '.NET' },
+      { src: 'assets/logos/csharp.png', alt: '.NET' },
       { src: 'assets/logos/wpf.png', alt: 'WPF' }
     ]
   },
@@ -120,7 +119,7 @@ experiences: Experience[] = [
     link: 'https://www.ncr.com/',
     techLogos: [
       { src: 'assets/logos/cplusplus.png', alt: 'C++' },
-      { src: 'assets/logos/netcore.png', alt: '.NET Core' },
+      { src: 'assets/logos/dotnetcore.png', alt: '.NET Core' },
       { src: 'assets/logos/iis.png', alt: 'IIS' },
       { src: 'assets/logos/docker.png', alt: 'Docker' }
     ]
