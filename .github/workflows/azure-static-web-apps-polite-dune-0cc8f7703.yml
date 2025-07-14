@@ -16,24 +16,40 @@ jobs:
     name: Build and Deploy Job
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js (v20 to match Angular CLI requirements)
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
         with:
-          node-version: '20'
+          submodules: true
+          lfs: false
+      - name: Ensure write permissions for .git/config
+        run: chmod +w .git/config          
+      - name: Remove extraheader from git config
+        run: sudo git config --local --unset-all http.https://github.com/.extraheader || true   
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Angular app
-        run: npm run build -- --configuration=production
-
-      - name: Deploy to Azure Static Web Apps
+      - name: Build And Deploy
+        id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: f663c4b15d463f79518ff602baab5f7a9a62cbc9601970081ad1b5adfc0daf8c01-831db3b0-a1f1-49d6-985e-4111ed0909a200325070cc8f7703
-          action: upload
-          app_location: /
-          output_location: dist/adi-portfolio
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_POLITE_DUNE_0CC8F7703 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: "upload"
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: "/" # App source code path
+          api_location: "" # Api source code path - optional
+          # Angular 20 outputs the production build to the `browser` folder
+          # inside `dist/<project>`. Point the workflow to that directory so
+          # the Static Web Apps action uploads the correct files.
+          output_location: "dist/adi-portfolio/browser" # Built app content directory
+          ###### End of Repository/Build Configurations ######
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_POLITE_DUNE_0CC8F7703 }}
+          action: "close"
