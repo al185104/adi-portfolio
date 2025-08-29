@@ -25,6 +25,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/sitemap.xml",
+              "src/robots.txt",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -84,6 +85,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/sitemap.xml",
+              "src/robots.txt",
               {
                 "glob": "**/*",
                 "input": "public"

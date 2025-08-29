@@ -1,0 +1,11 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Block crawling of common Angular build/system folders (if ever deployed)
+Disallow: /assets/i18n/
+Disallow: /node_modules/
+Disallow: /environment/
+
+# Sitemap location
+Sitemap: https://www.adrianllamido.com/sitemap.xml
