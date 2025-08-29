@@ -120,7 +120,7 @@ experiences: Experience[] = [
     techLogos: [
       { src: 'assets/logos/cplusplus.png', alt: 'C++' },
       { src: 'assets/logos/dotnetcore.png', alt: '.NET Core' },
-      { src: 'assets/logos/iis.png', alt: 'IIS' },
+      // { src: 'assets/logos/iis.png', alt: 'IIS' },
       { src: 'assets/logos/docker.png', alt: 'Docker' }
     ]
   }
